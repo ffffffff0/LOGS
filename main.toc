@@ -2,5 +2,6 @@
 \contentsline {section}{\numberline {2}Spring Note}{2}{section.2}%
 \contentsline {section}{\numberline {3}Nginx Note}{2}{section.3}%
 \contentsline {section}{\numberline {4}JS Note}{2}{section.4}%
-\contentsline {section}{\numberline {5}常用环境}{2}{section.5}%
-\contentsline {section}{\numberline {6}起源与未来的修改计划}{3}{section.6}%
+\contentsline {section}{\numberline {5}杂记}{2}{section.5}%
+\contentsline {section}{\numberline {6}常用环境}{2}{section.6}%
+\contentsline {section}{\numberline {7}起源与未来的修改计划}{3}{section.7}%
