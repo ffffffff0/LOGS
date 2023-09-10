@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k}{static}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{ngx\PYGZus{}http\PYGZus{}lua\PYGZus{}ngx\PYGZus{}sleep}\PYG{p}{(}\PYG{n}{lua\PYGZus{}State}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{L}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{coctx}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{sleep}\PYG{p}{.}\PYG{n}{handler}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ngx\PYGZus{}http\PYGZus{}lua\PYGZus{}sleep\PYGZus{}handler}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{ngx\PYGZus{}add\PYGZus{}timer}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{coctx}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{sleep}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ngx\PYGZus{}msec\PYGZus{}t}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{delay}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{lua\PYGZus{}yield}\PYG{p}{(}\PYG{n}{L}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k}{static}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{ngx\PYGZus{}http\PYGZus{}lua\PYGZus{}ngx\PYGZus{}decode\PYGZus{}base64}\PYG{p}{(}\PYG{n}{lua\PYGZus{}State}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{L}\PYG{p}{);}
+\end{Verbatim}

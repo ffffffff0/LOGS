@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{\PYGZdl{}}\PYG{+w}{ }\PYG{n}{resty}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{e}\PYG{+w}{ }\PYG{err}{\PYGZsq{}}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{tb}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{tb}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{red}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{tb}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{function}\PYG{p}{()}\PYG{+w}{ }\PYG{n}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}func\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{end}
+\PYG{+w}{	}\PYG{n}{setmetatable}\PYG{p}{(}\PYG{n}{tb}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{\PYGZus{}\PYGZus{}mode}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}v\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+\PYG{+w}{	}\PYG{n}{print}\PYG{p}{(}\PYG{err}{\PYGZsh{}}\PYG{n}{tb}\PYG{p}{)}\PYG{+w}{  }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{2}
+\PYG{+w}{	}\PYG{n}{collectgarbage}\PYG{p}{()}
+\PYG{+w}{	}\PYG{n}{print}\PYG{p}{(}\PYG{err}{\PYGZsh{}}\PYG{n}{tb}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{+w}{	}\PYG{err}{\PYGZsq{}}
+\end{Verbatim}

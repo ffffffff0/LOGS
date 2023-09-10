@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{ngx}\PYG{p}{.}\PYG{n}{decode\PYGZus{}base64}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{function}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{slen}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{err}{\PYGZsh{}}\PYG{n}{s}
+\PYG{+w}{		}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{dlen}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{base64\PYGZus{}decoded\PYGZus{}length}\PYG{p}{(}\PYG{n}{slen}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{dst}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{get\PYGZus{}string\PYGZus{}buf}\PYG{p}{(}\PYG{n}{dlen}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{pdlen}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{get\PYGZus{}size\PYGZus{}ptr}\PYG{p}{()}
+\PYG{+w}{		}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{ok}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{C}\PYG{p}{.}\PYG{n}{ngx\PYGZus{}http\PYGZus{}lua\PYGZus{}ffi\PYGZus{}decode\PYGZus{}base64}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{slen}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dst}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pdlen}\PYG{p}{)}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{n}{ok}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{nil}
+\PYG{+w}{	}\PYG{n}{end}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ffi\PYGZus{}string}\PYG{p}{(}\PYG{n}{dst}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pdlen}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+\PYG{+w}{	}\PYG{n}{end}
+\end{Verbatim}

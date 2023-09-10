@@ -1,7 +1,20 @@
 \contentsline {section}{\numberline {1}要做的事情}{1}{section.1}%
 \contentsline {section}{\numberline {2}Spring Note}{2}{section.2}%
 \contentsline {section}{\numberline {3}Nginx Note}{2}{section.3}%
-\contentsline {section}{\numberline {4}JS Note}{2}{section.4}%
-\contentsline {section}{\numberline {5}杂记}{2}{section.5}%
-\contentsline {section}{\numberline {6}常用环境}{2}{section.6}%
-\contentsline {section}{\numberline {7}起源与未来的修改计划}{3}{section.7}%
+\contentsline {subsection}{\numberline {\textcolor {PrimaryColor}{3.1}}OpenResty Note}{2}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Nginx 概念}{2}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}OpenResty 概念}{4}{subsubsection.3.1.2}%
+\contentsline {paragraph}{LuaJIT 概念}{4}{paragraph*.2}%
+\contentsline {subparagraph}{Lua C function}{5}{subparagraph*.3}%
+\contentsline {subparagraph}{LuaJIT FFI}{6}{subparagraph*.4}%
+\contentsline {paragraph}{Lua 元表}{6}{paragraph*.5}%
+\contentsline {subsubsection}{\numberline {3.1.3}OpenResty 原理}{7}{subsubsection.3.1.3}%
+\contentsline {paragraph}{OpenResty cosocket}{8}{paragraph*.6}%
+\contentsline {section}{\numberline {4}JS Note}{9}{section.4}%
+\contentsline {section}{\numberline {5}MySQL Note}{9}{section.5}%
+\contentsline {subsection}{\numberline {\textcolor {PrimaryColor}{5.1}}MySQL 概述}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {\textcolor {PrimaryColor}{5.2}}InnoDB 引擎}{11}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}InnoDB 结构概述}{11}{subsubsection.5.2.1}%
+\contentsline {section}{\numberline {6}杂记}{11}{section.6}%
+\contentsline {section}{\numberline {7}常用环境}{11}{section.7}%
+\contentsline {section}{\numberline {8}起源与未来的修改计划}{13}{section.8}%

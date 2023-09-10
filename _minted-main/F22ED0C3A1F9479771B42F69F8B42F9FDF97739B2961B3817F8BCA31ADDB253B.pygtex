@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{worker\PYGZus{}processes}\PYG{+w}{ }\PYG{k}{auto}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{pid}\PYG{+w}{ }\PYG{n}{logs}\PYG{o}{/}\PYG{n}{nginx}\PYG{p}{.}\PYG{n}{pid}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{error\PYGZus{}log}\PYG{+w}{ }\PYG{n}{logs}\PYG{o}{/}\PYG{n}{error}\PYG{p}{.}\PYG{n}{log}\PYG{+w}{ }\PYG{n}{notice}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{worker\PYGZus{}rlimit\PYGZus{}nofile}\PYG{+w}{ }\PYG{l+m+mi}{65535}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{events}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{worker\PYGZus{}connections}\PYG{+w}{ }\PYG{l+m+mi}{16384}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{http}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{server}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{listen}\PYG{+w}{ }\PYG{l+m+mi}{80}\PYG{p}{;}
+\PYG{+w}{			}\PYG{n}{listen}\PYG{+w}{ }\PYG{l+m+mi}{443}\PYG{+w}{ }\PYG{n}{ssl}\PYG{p}{;}
+\PYG{+w}{			}\PYG{n}{location}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{proxy\PYGZus{}pass}\PYG{+w}{ }\PYG{n}{https}\PYG{o}{:}\PYG{c+c1}{//foo.com;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{stream}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{server}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{listen}\PYG{+w}{ }\PYG{l+m+mi}{53}\PYG{+w}{ }\PYG{n}{udp}\PYG{p}{;}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

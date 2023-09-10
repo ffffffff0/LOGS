@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{\PYGZus{}M}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}VERSION}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{err}{\PYGZsq{}}\PYG{l+m+mf}{0.21}\PYG{err}{\PYGZsq{}}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n}{使用}\PYG{+w}{ }\PYG{n}{table}\PYG{+w}{ }\PYG{n}{模拟类}
+\PYG{+w}{	}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{mt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}index}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{\PYGZus{}M}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n}{mt}\PYG{+w}{ }\PYG{n}{即}\PYG{+w}{ }\PYG{n}{metatable}\PYG{+w}{ }\PYG{n}{的缩写}\PYG{err}{，}\PYG{n}{\PYGZus{}\PYGZus{}index}\PYG{+w}{ }\PYG{n}{指向类自身}
+\PYG{+w}{	}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n}{类的构造函数}
+\PYG{+w}{	}\PYG{n}{function}\PYG{+w}{ }\PYG{n}{\PYGZus{}M}\PYG{p}{.}\PYG{k}{new}\PYG{p}{(}\PYG{n}{self}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{sock}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{tcp}\PYG{p}{()}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{sock}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{			}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{nil}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}
+\PYG{+w}{		}\PYG{n}{end}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{setmetatable}\PYG{p}{(\PYGZob{}}\PYG{+w}{ }\PYG{n}{sock}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sock}\PYG{+w}{ }\PYG{p}{\PYGZcb{},}\PYG{+w}{ }\PYG{n}{mt}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n}{使用}\PYG{+w}{ }\PYG{n}{table}\PYG{+w}{ }\PYG{n}{和}\PYG{+w}{ }\PYG{n}{metatable}\PYG{+w}{ }\PYG{n}{模拟类的实例}
+\PYG{+w}{	}\PYG{n}{end}
+\PYG{+w}{	}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n}{类的成员函数}
+\PYG{+w}{	}\PYG{n}{function}\PYG{+w}{ }\PYG{n}{\PYGZus{}M}\PYG{p}{.}\PYG{n}{set\PYGZus{}timeout}\PYG{p}{(}\PYG{n}{self}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{timeout}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n}{使用}\PYG{+w}{ }\PYG{n}{self}\PYG{+w}{ }\PYG{n}{参数}\PYG{err}{，}\PYG{n}{获取要操作的类的实例}
+\PYG{+w}{		}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{sock}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{self}\PYG{p}{.}\PYG{n}{sock}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{sock}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{			}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{nil}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}not initialized\PYGZdq{}}
+\PYG{+w}{		}\PYG{n}{end}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{sock}\PYG{o}{:}\PYG{n}{settimeout}\PYG{p}{(}\PYG{n}{timeout}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{end}
+\end{Verbatim}

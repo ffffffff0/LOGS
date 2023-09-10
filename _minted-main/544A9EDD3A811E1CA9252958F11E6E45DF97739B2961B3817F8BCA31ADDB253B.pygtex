@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k}{static}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{ngx\PYGZus{}http\PYGZus{}lua\PYGZus{}ngx\PYGZus{}decode\PYGZus{}base64}\PYG{p}{(}\PYG{n}{lua\PYGZus{}State}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{L}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{ngx\PYGZus{}str\PYGZus{}t}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{src}\PYG{p}{;}
+\PYG{+w}{		}\PYG{n}{src}\PYG{p}{.}\PYG{n}{data}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u\PYGZus{}char}\PYG{+w}{ }\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{luaL\PYGZus{}checklstring}\PYG{p}{(}\PYG{n}{L}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{src}\PYG{p}{.}\PYG{n}{len}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{p}\PYG{p}{.}\PYG{n}{len}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ngx\PYGZus{}base64\PYGZus{}decoded\PYGZus{}length}\PYG{p}{(}\PYG{n}{src}\PYG{p}{.}\PYG{n}{len}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{p}\PYG{p}{.}\PYG{n}{data}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{lua\PYGZus{}newuserdata}\PYG{p}{(}\PYG{n}{L}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{len}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ngx\PYGZus{}decode\PYGZus{}base64}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{src}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{NGX\PYGZus{}OK}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{lua\PYGZus{}pushlstring}\PYG{p}{(}\PYG{n}{L}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{data}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{len}\PYG{p}{);}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{lua\PYGZus{}pushnil}\PYG{p}{(}\PYG{n}{L}\PYG{p}{);}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

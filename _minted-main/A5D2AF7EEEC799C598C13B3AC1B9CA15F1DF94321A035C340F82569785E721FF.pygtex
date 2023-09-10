@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{update}\PYG{+w}{ }\PYG{n}{users}\PYG{+w}{ }\PYG{n}{set}\PYG{+w}{ }\PYG{n}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}lihua\PYGZdq{}}\PYG{+w}{ }\PYG{n}{where}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{p}{;}
+\end{Verbatim}

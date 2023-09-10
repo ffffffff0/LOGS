@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{\PYGZdl{}}\PYG{+w}{ }\PYG{n}{resty}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{e}\PYG{+w}{ }\PYG{err}{\PYGZsq{}}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{sock}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ngx}\PYG{p}{.}\PYG{n}{socket}\PYG{p}{.}\PYG{n}{tcp}\PYG{p}{()}
+\PYG{+w}{        }\PYG{n+nl}{sock}\PYG{p}{:}\PYG{n}{settimeout}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{+w}{  }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n}{one}\PYG{+w}{ }\PYG{n}{second}\PYG{+w}{ }\PYG{n}{timeout}
+\PYG{+w}{        }\PYG{n}{local}\PYG{+w}{ }\PYG{n}{ok}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sock}\PYG{o}{:}\PYG{n}{connect}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}www.baidu.com\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{80}\PYG{p}{)}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{ok}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{            }\PYG{n}{ngx}\PYG{p}{.}\PYG{n}{say}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}failed to connect: \PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}\PYG{p}{)}
+\PYG{+w}{            }\PYG{k}{return}
+\PYG{+w}{        }\PYG{n}{end}
+
+\PYG{+w}{        }\PYG{n}{local}\PYG{+w}{ }\PYG{n}{req\PYGZus{}data}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}GET / HTTP/1.1}\PYG{l+s+se}{\PYGZbs{}r\PYGZbs{}n}\PYG{l+s}{Host: www.baidu.com}\PYG{l+s+se}{\PYGZbs{}r\PYGZbs{}n\PYGZbs{}r\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}
+\PYG{+w}{        }\PYG{n}{local}\PYG{+w}{ }\PYG{n}{bytes}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sock}\PYG{o}{:}\PYG{n}{send}\PYG{p}{(}\PYG{n}{req\PYGZus{}data}\PYG{p}{)}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{err}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{            }\PYG{n}{ngx}\PYG{p}{.}\PYG{n}{say}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}failed to send: \PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}\PYG{p}{)}
+\PYG{+w}{            }\PYG{k}{return}
+\PYG{+w}{        }\PYG{n}{end}
+
+\PYG{+w}{        }\PYG{n}{local}\PYG{+w}{ }\PYG{n}{data}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{partial}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sock}\PYG{o}{:}\PYG{n}{receive}\PYG{p}{()}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{err}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{            }\PYG{n}{ngx}\PYG{p}{.}\PYG{n}{say}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}failed to receive: \PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{err}\PYG{p}{)}
+\PYG{+w}{            }\PYG{k}{return}
+\PYG{+w}{        }\PYG{n}{end}
+
+\PYG{+w}{        }\PYG{n+nl}{sock}\PYG{p}{:}\PYG{n}{close}\PYG{p}{()}
+\PYG{+w}{        }\PYG{n}{ngx}\PYG{p}{.}\PYG{n}{say}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}response is: \PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{data}\PYG{p}{)}\PYG{err}{\PYGZsq{}}
+\end{Verbatim}

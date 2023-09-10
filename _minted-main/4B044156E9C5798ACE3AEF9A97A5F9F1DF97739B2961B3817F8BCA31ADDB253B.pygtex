@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{n}{local}\PYG{+w}{ }\PYG{n}{ffi}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{require}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ffi\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{ffi}\PYG{p}{.}\PYG{n}{cdef}\PYG{p}{[[}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{printf}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{fmt}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{...);}
+\PYG{+w}{	}\PYG{p}{]]}
+\PYG{+w}{	}\PYG{n}{ffi}\PYG{p}{.}\PYG{n}{C}\PYG{p}{.}\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Hello \PYGZpc{}s!\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}world\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

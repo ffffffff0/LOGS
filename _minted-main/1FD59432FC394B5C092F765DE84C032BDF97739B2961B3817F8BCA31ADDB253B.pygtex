@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{ngx\PYGZus{}http\PYGZus{}lua\PYGZus{}inject\PYGZus{}sleep\PYGZus{}api}\PYG{p}{(}\PYG{n}{lua\PYGZus{}State}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{L}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{lua\PYGZus{}pushcfunction}\PYG{p}{(}\PYG{n}{L}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ngx\PYGZus{}http\PYGZus{}lua\PYGZus{}ngx\PYGZus{}sleep}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{lua\PYGZus{}setfield}\PYG{p}{(}\PYG{n}{L}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}sleep\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
